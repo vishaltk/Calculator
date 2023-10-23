@@ -8,4 +8,12 @@ import lombok.Data;
 public class CommandResponse<T> {
     T data;
     ErrorInfo errorInfo;
+
+    @Override
+    public String toString() {
+        if(null == errorInfo)
+            return data.toString();
+        else
+            return errorInfo.toString();
+    }
 }
